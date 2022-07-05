@@ -1,5 +1,13 @@
 {{page-title "MarkerclustererIssue17"}}
 
-<h2 id="title">Welcome to Ember</h2>
+<GMap
+  @zoom={{9}}
+  as |map|>
+  <map.markerClusterer as |cluster|>
 
-{{outlet}}
+    {{#each this.markers as |location|}}
+      <cluster.marker @lat={{location.lat}} @lng={{location.lng}} />
+    {{/each}}
+
+  </map.markerClusterer>
+</GMap>
