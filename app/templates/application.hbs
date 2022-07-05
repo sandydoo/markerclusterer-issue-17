@@ -1,7 +1,13 @@
 {{page-title "MarkerclustererIssue17"}}
 
 <GMap
-  @zoom={{9}}
+  @center={{this.center}}
+  @disableDefaultUI={{true}}
+  @zoomControl={{true}}
+  @zoomControlOptions={{hash position=this.google.maps.ControlPosition.TOP_RIGHT}}
+  @zoom={{12}}
+  @onceOnIdle={{this.mapReady}}
+  class="h-100"
   as |map|>
   <map.markerClusterer as |cluster|>
 
